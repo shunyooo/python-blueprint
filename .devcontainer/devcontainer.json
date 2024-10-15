@@ -4,17 +4,10 @@
 	"name": "Existing Dockerfile",
 	"build": {
 		"context": "..",
-		"dockerfile": "../cuda.Dockerfile"
+		"dockerfile": "../Dockerfile"
 	},
-	"mounts": [
-		// Mount the local gcloud config folder to the container
-		"source=${localEnv:HOME}/.config/gcloud/,target=/root/.config/gcloud/,type=bind,consistency=cached"
-	],
-	// Delete below runArgs if not using gpu
-	"runArgs": [
-		"--gpus",
-		"all"
-	],
+	"workspaceMount": "source=${localWorkspaceFolder}/.,target=/app,type=bind,consistency=cached",
+	"workspaceFolder": "/app",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers/features/github-cli:1": {}
@@ -25,14 +18,21 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
+				"charliermarsh.ruff",
 				"ms-toolsai.jupyter",
 				"ms-toolsai.jupyter-keymap",
 				"ms-toolsai.jupyter-renderers",
 				"mutantdino.resourcemonitor",
 				"aaron-bond.better-comments",
-				"bungcip.better-toml",
+				"tamasfe.even-better-toml",
 				"njpwerner.autodocstring",
-				"emeraldwalk.RunOnSave"
+				"emeraldwalk.RunOnSave",
+				"ms-azuretools.vscode-docker",
+				"GitHub.copilot",
+				"ms-vscode.makefile-tools",
+				"ptweir.python-string-sql",
+				"minodisk.bigquery-runner",
+				"hashicorp.terraform"
 			]
 		}
 	}
