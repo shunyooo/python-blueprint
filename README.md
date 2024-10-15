@@ -8,8 +8,8 @@ You can customize the details according to your own preference.
 
 - Docker
   - Python 3.10
-  - Support for both CPU and GPU
-- Package management with Poetry
+  - Support for CPU
+- Package management with [uv](https://docs.astral.sh/uv/)
 - VScode
   - Optimized setup for Python development
 
@@ -24,8 +24,9 @@ You can customize the details according to your own preference.
 
 Using a Marketplace option is convenient (note that there is a license fee).
 
-1. [For GPU](https://console.cloud.google.com/marketplace/product/nvidia/nvidia-ai-enterprise-vmi) (nvidia driver and nvidia-docker preinstalled)
-2. [For CPU](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/docker-compose-ubuntu20) (docker and docker-compose preinstalled)
+1. [For CPU](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/docker-compose-ubuntu20) (docker and docker-compose preinstalled)
+
+Note: This template currently supports CPU only. Instead of launching VMs, I now use serverless services for GPU tasks.
 
 You may need to SSH in and perform initial setup, so connect with `gcloud compute ssh` beforehand.
 
@@ -48,10 +49,9 @@ You may need to SSH in and perform initial setup, so connect with `gcloud comput
 Clone this repository:
 
 ```bash
-git clone https://github.com/shunyooo/python-development-template.git
+git clone https://github.com/shunyooo/python-blueprint.git
 ```
 
-- Rewrite `devcontainer.json` depending on whether you use cpu or gpu
 - Login and configure gcloud and git on the host ( settings passed to container)
 
 ### 5. Access via devcontainer

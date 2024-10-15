@@ -1,33 +1,41 @@
-// Need to install the vscode extension in extension.json
 {
   // common settings
   "files.exclude": {
     "**/__pycache__": true,
     "**/.ipynb_checkpoints": true,
+    "**/.ruff_cache": true,
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/.ipynb_checkpoints/**": true,
     "**/.venv/**": true,
+    "**/data/**": true,
   },
-  // runnable settings
+  // interpreter settings
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-  // edit settings
+  // editor settings
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": false,
+  "python.analysis.extraPaths": [
+    "./",
+  ],
+  "python.analysis.indexing": true,
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit",
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+  },
+  // jupyter settings
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.stubPath": "",
-  "python.analysis.indexing": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
-  "python.linting.lintOnSave": true,
-  "python.linting.enabled": true,
-  "python.formatting.provider": "black",
+  "notebook.formatOnSave.enabled": true,
+  "files.associations": {
+    "*.bqsql": "sql"
+  }
 }
