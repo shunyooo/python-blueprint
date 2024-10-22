@@ -1,4 +1,4 @@
-# Python Development Template
+# Python Blueprint
 
 This is a template for Python development on Docker with VSCode.
 
@@ -51,6 +51,18 @@ Clone this repository:
 ```bash
 git clone https://github.com/shunyooo/python-blueprint.git
 ```
+
+### 5. Project Setup
+
+Run the following commands:
+
+```bash
+cd python-blueprint
+. setup.sh
+```
+
+- The project name in the related files will be replaced.
+
 
 - Login and configure gcloud and git on the host ( settings passed to container)
 

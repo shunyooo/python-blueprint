@@ -10,7 +10,7 @@ RUN apt-get update && apt-get upgrade -y && \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # workdir must be the same as the one specified in devcontainer.json
-ARG workdir=/app
+ARG workdir
 WORKDIR ${workdir}
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
