@@ -7,7 +7,7 @@ You can customize the details according to your own preference.
 # Features
 
 - Docker
-  - Python 3.10
+  - Python 3.12
   - Support for CPU
 - Package management with [uv](https://docs.astral.sh/uv/)
 - VScode
