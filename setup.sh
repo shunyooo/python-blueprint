@@ -19,3 +19,9 @@ for target in "${TARGETS[@]}"; do
         echo "replaced: $target"
     fi
 done
+
+# Remove LICENSE file
+if [ -f "LICENSE" ]; then
+    rm LICENSE
+    echo "removed: LICENSE"
+fi
